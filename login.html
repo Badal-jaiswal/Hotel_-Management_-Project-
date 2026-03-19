@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Signup</title>
+    <title>Modern Login</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* Wave Animation */
         .wave {
             animation: waveMove 6s infinite linear;
         }
 
         @keyframes waveMove {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-100px); }
+            100% { transform: translateX(-120px); }
         }
     </style>
 </head>
 
 <body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 h-screen flex items-center justify-center overflow-hidden">
 
-    <!-- Glass Card -->
+    <!-- Login Card -->
     <div class="backdrop-blur-lg bg-white/20 p-8 rounded-2xl shadow-2xl w-80 relative z-10 border border-white/30">
 
-        <h2 class="text-2xl font-bold text-center text-white mb-6">Create Account</h2>
+        <h2 class="text-2xl font-bold text-center text-white mb-6">Login Account</h2>
 
-        <input type="text" id="name" placeholder="Full Name" 
+        <input type="email" id="email" placeholder="Enter Email"
             class="w-full mb-4 p-2 rounded-lg bg-white/30 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-pink-300 transition">
 
-        <input type="email" id="email" placeholder="Email"
+        <input type="password" id="password" placeholder="Enter Password"
             class="w-full mb-4 p-2 rounded-lg bg-white/30 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-pink-300 transition">
 
-        <input type="password" id="password" placeholder="Password"
-            class="w-full mb-4 p-2 rounded-lg bg-white/30 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-pink-300 transition">
-
-        <button id="signup"
+        <button id="btn"
             class="w-full bg-pink-500 text-white p-2 rounded-lg hover:bg-pink-600 hover:scale-105 transition duration-300 shadow-lg">
-            Signup
+            Login
         </button>
 
     </div>
 
-    <!-- Animated Waves -->
+    <!-- Wave Background -->
     <div class="absolute bottom-0 left-0 w-full z-0">
         <svg class="wave w-[200%]" viewBox="0 0 1440 320">
             <path fill="#ffffff" fill-opacity="0.3"
@@ -59,24 +56,30 @@
         </svg>
     </div>
 
+    <!-- JS LOGIC (NO CHANGE) -->
     <script>
-        document.getElementById("signup").addEventListener("click", function () {
 
-            let name = document.getElementById("name").value;
+        document.getElementById("btn").addEventListener("click", function () {
+
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
 
-            if (name && email && password) {
-                localStorage.setItem("email", email);
-                localStorage.setItem("password", password);
+            let storedEmail = localStorage.getItem("email");
 
-                alert("Signup Successful");
+            let storedpassword = localStorage.getItem("password");
+
+            if (email === storedEmail && password === storedpassword) {
+
+                alert("sucessfuly login");
+
             } else {
-                alert("Please fill all fields");
+                alert("Invalid email and password");
             }
 
-        });
+        })
+
     </script>
 
 </body>
+
 </html>
