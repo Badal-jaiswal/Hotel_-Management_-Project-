@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+<div class="flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 h-screen fixed bg-gray-900 text-white p-6 shadow-xl">
+
+        <h1 class="text-2xl font-bold mb-8">🏨 Hotel Panel</h1>
+
+        <ul class="space-y-2">
+
+            <li onclick="location.href='./signup.html'"
+                class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer">
+                ✨ Signup
+            </li>
+
+            <li onclick="location.href='./login.html'"
+                class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer">
+                🔐 Login
+            </li>
+
+            <li class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer">📅 Reservation</li>
+            <li class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer">🛏 Rooms</li>
+            <li class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer">📦 Booking</li>
+            <li class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer">👨‍💼 Staff</li>
+            <li class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer">⭐ Reviews</li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 flex-1 p-10">
+
+        <!-- Header -->
+        <h1 class="text-4xl font-bold text-gray-800 mb-8">
+            Dashboard Overview
+        </h1>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+                <h2 class="text-gray-600">Total Rooms</h2>
+                <p class="text-3xl font-bold text-blue-500 mt-2">120</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+                <h2 class="text-gray-600">New Bookings</h2>
+                <p class="text-3xl font-bold text-green-500 mt-2">35</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+                <h2 class="text-gray-600">Staff</h2>
+                <p class="text-3xl font-bold text-purple-500 mt-2">18</p>
+            </div>
+
+        </div>
+
+        <!-- Wave -->
+        <div class="mt-16">
+            <svg viewBox="0 0 1440 320" class="w-full">
+                <path fill="#6366f1" fill-opacity="0.2">
+                    <animate attributeName="d"
+                        dur="8s"
+                        repeatCount="indefinite"
+                        values="
+                        M0,160L80,165C160,171,320,181,480,186C640,192,800,192,960,186C1120,181,1280,171,1440,165L1440,320L0,320Z;
+
+                        M0,170L80,150C160,130,320,140,480,160C640,180,800,200,960,190C1120,180,1280,170,1440,160L1440,320L0,320Z;
+
+                        M0,160L80,165C160,171,320,181,480,186C640,192,800,192,960,186C1120,181,1280,171,1440,165L1440,320L0,320Z
+                        ">
+                    </animate>
+                </path>
+            </svg>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
